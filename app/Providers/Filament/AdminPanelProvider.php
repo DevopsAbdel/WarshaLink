@@ -29,6 +29,7 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login(\App\Filament\Pages\Login::class)
             ->brandName('WarshaLink')
+            ->darkMode(false)
             ->renderHook('panels::auth.login.form.before', fn () => view('filament.slogan'))
             ->spa()
             ->unsavedChangesAlerts()
