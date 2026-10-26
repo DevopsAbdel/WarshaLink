@@ -28,7 +28,7 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
-            ->brandName('BTP GESTION MAROC')
+            ->brandName('WarshaLink')
             ->spa()
             ->unsavedChangesAlerts()
             ->colors([
