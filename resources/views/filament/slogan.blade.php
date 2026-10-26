@@ -1,14 +1,15 @@
 <style>
     .fi-simple-header .fi-logo { font-size: 2.25rem !important; line-height: 1.1; }
     .fi-simple-layout {
-        background-image: url('/images/btp-bg.jpg');
+        background-image: linear-gradient(rgba(15, 23, 42, 0.55), rgba(15, 23, 42, 0.55)), url('/images/btp-bg.jpg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
     }
     .fi-simple-main {
-        background-color: rgba(255, 255, 255, 0.9) !important;
-        backdrop-filter: blur(2px);
+        background-color: rgba(255, 255, 255, 0.92) !important;
+        backdrop-filter: blur(6px);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45) !important;
     }
 </style>
 <div style="text-align:center; margin-bottom:1rem;">
