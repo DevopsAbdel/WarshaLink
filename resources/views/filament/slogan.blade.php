@@ -16,7 +16,7 @@
         padding-bottom: 1.5rem !important;
     }
 </style>
-<div style="display:flex; justify-content:center; margin-bottom:1rem;">
+<div style="display:flex; justify-content:center; margin-bottom:0.25rem;">
     <x-filament-panels::theme-switcher />
 </div>
 <div style="text-align:center; margin-bottom:1rem;">
