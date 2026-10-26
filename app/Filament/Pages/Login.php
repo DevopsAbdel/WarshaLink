@@ -10,4 +10,9 @@ class Login extends BaseLogin
     {
         return '';
     }
+
+    public function hasLogo(): bool
+    {
+        return false;
+    }
 }
