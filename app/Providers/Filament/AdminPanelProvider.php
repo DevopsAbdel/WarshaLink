@@ -28,7 +28,8 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
-            ->brandName("WarshaLink - La passerelle intelligente entre les chantiers terrain et la direction d'entreprise.")
+            ->brandName('WarshaLink')
+            ->renderHook('panels::auth.login.form.before', fn () => view('filament.slogan'))
             ->spa()
             ->unsavedChangesAlerts()
             ->colors([
