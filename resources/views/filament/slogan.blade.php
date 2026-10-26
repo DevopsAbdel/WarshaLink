@@ -1,6 +1,5 @@
 <style>
-    .fi-simple-header .fi-logo { display: none !important; }
-    .fi-simple-header .fi-simple-header-heading { display: none !important; }
+    .fi-simple-header { display: none !important; }
     .fi-simple-layout {
         background-image: linear-gradient(rgba(15, 23, 42, 0.55), rgba(15, 23, 42, 0.55)), url('/images/btp-bg.jpg');
         background-size: cover;
