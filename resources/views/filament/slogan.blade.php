@@ -7,11 +7,13 @@
         background-repeat: no-repeat;
     }
     .fi-simple-main {
-        background-color: rgba(255, 255, 255, 0.92) !important;
         backdrop-filter: blur(6px);
         box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45) !important;
     }
 </style>
+<div style="display:flex; justify-content:flex-end; margin-bottom:0.5rem;">
+    <x-filament-panels::theme-switcher />
+</div>
 <div style="text-align:center; margin-bottom:1rem;">
     <p style="color:#6b7280; font-size:0.9rem; margin:0 0 0.75rem 0;">
         La passerelle intelligente entre les chantiers terrain et la direction d'entreprise.
