@@ -29,7 +29,6 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login(\App\Filament\Pages\Login::class)
             ->brandName('WarshaLink')
-            ->simplePageMaxContentWidth(\Filament\Support\Enums\MaxWidth::Small)
             ->renderHook('panels::auth.login.form.before', fn () => view('filament.slogan'))
             ->spa()
             ->unsavedChangesAlerts()
