@@ -6,8 +6,8 @@ use Filament\Pages\Auth\Login as BaseLogin;
 
 class Login extends BaseLogin
 {
-    public function getHeading(): ?string
+    public function getHeading(): string
     {
-        return null;
+        return '';
     }
 }
