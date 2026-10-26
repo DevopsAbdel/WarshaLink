@@ -27,7 +27,7 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
-            ->login(\App\Filament\Pages\Login::class)
+            ->login()
             ->brandName('WarshaLink')
             ->renderHook('panels::auth.login.form.before', fn () => view('filament.slogan'))
             ->spa()
