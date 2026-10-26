@@ -10,6 +10,10 @@
     .fi-simple-main {
         backdrop-filter: blur(6px);
         box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45) !important;
+        margin-top: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
     }
 </style>
 <div style="display:flex; justify-content:center; margin-bottom:1rem;">
