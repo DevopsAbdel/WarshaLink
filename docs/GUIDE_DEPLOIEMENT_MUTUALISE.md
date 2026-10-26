@@ -105,9 +105,9 @@ Pour que les relances d'approbation et l'archivage automatique des pointages fon
 
 | Rôle | Email | Mot de passe | Périmètre |
 | :--- | :--- | :--- | :--- |
-| **Direction Générale** | `direction@btpmaroc.ma` | `password` | National (Toutes les villes & chantiers) |
-| **Conducteur Travaux** | `conducteur@btpmaroc.ma` | `password` | Supervision des 3 chantiers & validation DA/pointages |
-| **Chef Chantier Tanger**| `chef.tanger@btpmaroc.ma` | `password` | Chantier Marina Bay Tanger |
-| **Chef Chantier Casa**  | `chef.casa@btpmaroc.ma` | `password` | Chantier Les Palmiers Casablanca |
-| **Responsable Achats**  | `achats@btpmaroc.ma` | `password` | Négociation fournisseurs & Bons de commande |
-| **Responsable RH/Paie** | `rh@btpmaroc.ma` | `password` | Suivi présences ouvriers & exports salaires |
+| **Direction Générale** | `direction@warshalink.ma` | `password` | National (Toutes les villes & chantiers) |
+| **Conducteur Travaux** | `conducteur@warshalink.ma` | `password` | Supervision des 3 chantiers & validation DA/pointages |
+| **Chef Chantier Tanger**| `chef.tanger@warshalink.ma` | `password` | Chantier Marina Bay Tanger |
+| **Chef Chantier Casa**  | `chef.casa@warshalink.ma` | `password` | Chantier Les Palmiers Casablanca |
+| **Responsable Achats**  | `achats@warshalink.ma` | `password` | Négociation fournisseurs & Bons de commande |
+| **Responsable RH/Paie** | `rh@warshalink.ma` | `password` | Suivi présences ouvriers & exports salaires |

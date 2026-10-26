@@ -143,10 +143,10 @@
 
     <div class="header">
         <div class="company-info">
-            <div class="company-name">ENTREPRISE GÉNÉRALE DE BTP MAROC</div>
+            <div class="company-name">WARSHALINK BTP MAROC</div>
             <div>Travaux Publics, Bâtiment & Génie Civil</div>
             <div>Casablanca • Rabat • Tanger • Marrakech</div>
-            <div>Tél : +212 5 22 00 00 00 | Email : contact@btpmaroc.ma</div>
+            <div>Tél : +212 5 22 00 00 00 | Email : contact@warshalink.ma</div>
             <div>IF : 12345678 • RC : 89765 • ICE : 002134567000099</div>
         </div>
         <div class="doc-title">
@@ -254,7 +254,7 @@
     </div>
 
     <div class="footer">
-        BTP Maroc S.A. au capital de 10.000.000 MAD - Siège social : Casablanca, Maroc - Ce document tient lieu de commande ferme.
+        WarshaLink BTP Maroc S.A. au capital de 10.000.000 MAD - Siège social : Casablanca, Maroc - contact@warshalink.ma - Ce document tient lieu de commande ferme.
     </div>
 
 </body>

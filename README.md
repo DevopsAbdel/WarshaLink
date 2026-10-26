@@ -85,11 +85,11 @@ php artisan serve
 
 | Rôle | Email | Mot de passe |
 | :--- | :--- | :--- |
-| **Direction Générale** | `direction@btpmaroc.ma` | `password` |
-| **Conducteur de Travaux** | `conducteur@btpmaroc.ma` | `password` |
-| **Chef Chantier Tanger** | `chef.tanger@btpmaroc.ma` | `password` |
-| **Responsable Achats** | `achats@btpmaroc.ma` | `password` |
-| **Responsable RH / Paie** | `rh@btpmaroc.ma` | `password` |
+| **Direction Générale** | `direction@warshalink.ma` | `password` |
+| **Conducteur de Travaux** | `conducteur@warshalink.ma` | `password` |
+| **Chef Chantier Tanger** | `chef.tanger@warshalink.ma` | `password` |
+| **Responsable Achats** | `achats@warshalink.ma` | `password` |
+| **Responsable RH / Paie** | `rh@warshalink.ma` | `password` |
 
 ---
 

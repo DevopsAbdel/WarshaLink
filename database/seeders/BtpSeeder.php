@@ -40,7 +40,7 @@ class BtpSeeder extends Seeder
         $usersData = [
             [
                 'name' => 'Directeur Général (M. Karim Bennani)',
-                'email' => 'direction@btpmaroc.ma',
+                'email' => 'direction@warshalink.ma',
                 'cin' => 'BE458921',
                 'telephone' => '0661123456',
                 'fonction' => 'Directeur Général',
@@ -48,7 +48,7 @@ class BtpSeeder extends Seeder
             ],
             [
                 'name' => 'Ing. Mehdi Alami (Conducteur Travaux)',
-                'email' => 'conducteur@btpmaroc.ma',
+                'email' => 'conducteur@warshalink.ma',
                 'cin' => 'K342110',
                 'telephone' => '0662234567',
                 'fonction' => 'Conducteur Principal de Travaux',
@@ -56,7 +56,7 @@ class BtpSeeder extends Seeder
             ],
             [
                 'name' => 'Chef Hassan Toumi (Chantier Tanger)',
-                'email' => 'chef.tanger@btpmaroc.ma',
+                'email' => 'chef.tanger@warshalink.ma',
                 'cin' => 'L567890',
                 'telephone' => '0663345678',
                 'fonction' => 'Chef de Chantier Tanger',
@@ -64,7 +64,7 @@ class BtpSeeder extends Seeder
             ],
             [
                 'name' => 'Chef Youssef Radi (Chantier Casa)',
-                'email' => 'chef.casa@btpmaroc.ma',
+                'email' => 'chef.casa@warshalink.ma',
                 'cin' => 'BK789012',
                 'telephone' => '0664456789',
                 'fonction' => 'Chef de Chantier Casablanca',
@@ -72,7 +72,7 @@ class BtpSeeder extends Seeder
             ],
             [
                 'name' => 'Mme Sanae Fassi (Achats)',
-                'email' => 'achats@btpmaroc.ma',
+                'email' => 'achats@warshalink.ma',
                 'cin' => 'A123456',
                 'telephone' => '0665567890',
                 'fonction' => 'Responsable Achats & Approvisionnements',
@@ -80,7 +80,7 @@ class BtpSeeder extends Seeder
             ],
             [
                 'name' => 'M. Rachid Idrissi (RH & Paie)',
-                'email' => 'rh@btpmaroc.ma',
+                'email' => 'rh@warshalink.ma',
                 'cin' => 'D987654',
                 'telephone' => '0666678901',
                 'fonction' => 'Responsable RH & Gestion Paie',
@@ -168,19 +168,19 @@ class BtpSeeder extends Seeder
         }
 
         // Affectations
-        $conducteur = User::where('email', 'conducteur@btpmaroc.ma')->first();
+        $conducteur = User::where('email', 'conducteur@warshalink.ma')->first();
         if ($conducteur) {
             foreach ($chantiers as $ch) {
                 $ch->users()->syncWithoutDetaching([$conducteur->id => ['role_sur_chantier' => 'conducteur']]);
             }
         }
 
-        $chefTanger = User::where('email', 'chef.tanger@btpmaroc.ma')->first();
+        $chefTanger = User::where('email', 'chef.tanger@warshalink.ma')->first();
         if ($chefTanger && isset($chantiers['CHT-TNG-001'])) {
             $chantiers['CHT-TNG-001']->users()->syncWithoutDetaching([$chefTanger->id => ['role_sur_chantier' => 'chef_de_chantier']]);
         }
 
-        $chefCasa = User::where('email', 'chef.casa@btpmaroc.ma')->first();
+        $chefCasa = User::where('email', 'chef.casa@warshalink.ma')->first();
         if ($chefCasa && isset($chantiers['CHT-CAS-002'])) {
             $chantiers['CHT-CAS-002']->users()->syncWithoutDetaching([$chefCasa->id => ['role_sur_chantier' => 'chef_de_chantier']]);
         }

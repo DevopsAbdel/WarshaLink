@@ -1,18 +1,18 @@
 @echo off
-title Serveur BTP Maroc
+title WarshaLink BTP - Serveur de Developpement
 echo ========================================================
-echo  DEMARRAGE DU SERVEUR DE DEVELOPPEMENT BTP MAROC
-echo  Application Web - Gestion des Achats & Pointage
+echo  WARSHALINK BTP - Gestion Achats & Pointage Chantiers
+echo  La passerelle intelligente entre terrain et direction
 echo ========================================================
 echo.
 echo URL d'acces : http://127.0.0.1:8000
 echo.
 echo Identifiants de demonstration :
-echo  - Direction Generale : direction@btpmaroc.ma / password
-echo  - Conducteur Travaux : conducteur@btpmaroc.ma / password
-echo  - Chef Tanger        : chef.tanger@btpmaroc.ma / password
-echo  - Responsable Achats : achats@btpmaroc.ma / password
-echo  - Responsable RH     : rh@btpmaroc.ma / password
+echo  - Direction Generale : direction@warshalink.ma / password
+echo  - Conducteur Travaux : conducteur@warshalink.ma / password
+echo  - Chef Tanger        : chef.tanger@warshalink.ma / password
+echo  - Responsable Achats : achats@warshalink.ma / password
+echo  - Responsable RH     : rh@warshalink.ma / password
 echo.
 echo Appuyez sur Ctrl+C pour arreter le serveur.
 echo ========================================================
