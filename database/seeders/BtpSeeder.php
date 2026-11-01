@@ -25,6 +25,7 @@ class BtpSeeder extends Seeder
     {
         // 1. Rôles et Permissions
         $roles = [
+            'super_admin' => 'Super Administrateur',
             'direction_generale' => 'Direction Générale & DAF',
             'conducteur_travaux' => 'Conducteur de Travaux',
             'chef_chantier' => 'Chef de Chantier',
@@ -38,6 +39,14 @@ class BtpSeeder extends Seeder
 
         // 2. Utilisateurs de démonstration
         $usersData = [
+            [
+                'name' => 'Super Admin WarshaLink',
+                'email' => 'admin@warshalink.ma',
+                'cin' => 'ADMIN01',
+                'telephone' => '0600000000',
+                'fonction' => 'Administrateur Plateforme',
+                'role' => 'super_admin',
+            ],
             [
                 'name' => 'Directeur Général (M. Karim Bennani)',
                 'email' => 'direction@warshalink.ma',
