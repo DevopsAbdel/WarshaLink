@@ -14,6 +14,22 @@ class RepartitionDepensesChantierChart extends ChartWidget
 
     protected static ?int $sort = 3;
 
+    protected static ?string $maxHeight = '220px';
+
+    protected static ?array $options = [
+        'plugins' => [
+            'legend' => [
+                'display' => true,
+                'position' => 'bottom',
+                'labels' => [
+                    'boxWidth' => 12,
+                    'padding' => 10,
+                ],
+            ],
+        ],
+        'maintainAspectRatio' => false,
+    ];
+
     protected int | string | array $columnSpan = [
         'md' => 1,
         'xl' => 1,

@@ -14,6 +14,24 @@ class DepensesMensuellesChart extends ChartWidget
 
     protected static ?int $sort = 2;
 
+    protected static ?string $maxHeight = '220px';
+
+    protected static ?array $options = [
+        'plugins' => [
+            'legend' => [
+                'display' => false,
+            ],
+        ],
+        'maintainAspectRatio' => false,
+        'scales' => [
+            'y' => [
+                'ticks' => [
+                    'precision' => 0,
+                ],
+            ],
+        ],
+    ];
+
     protected int | string | array $columnSpan = [
         'md' => 1,
         'xl' => 1,
