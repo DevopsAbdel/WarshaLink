@@ -37,32 +37,32 @@ class BtpOverview extends BaseWidget
         return [
             Stat::make('Chantiers en Exécution', $chantiersActifs)
                 ->description('Sur 3 villes du Royaume')
-                ->descriptionIcon('heroicon-m-building-office-2')
+                ->descriptionIcon('heroicon-m-building-office-2', 'before')
                 ->color('success'),
 
             Stat::make('Effectif Ouvriers Actifs', $totalOuvriers)
                 ->description('Permanents & Journaliers')
-                ->descriptionIcon('heroicon-m-user-group')
+                ->descriptionIcon('heroicon-m-user-group', 'before')
                 ->color('info'),
 
             Stat::make('Présence Terrain Aujourd\'hui', "{$tauxPresence} %")
                 ->description("{$nbPresents} ouvriers pointés présents")
-                ->descriptionIcon('heroicon-m-check-badge')
+                ->descriptionIcon('heroicon-m-check-badge', 'before')
                 ->color($tauxPresence >= 80 ? 'success' : 'warning'),
 
             Stat::make('Demandes d\'Achat à Valider', $daEnAttente)
                 ->description('En attente Conducteur ou DG')
-                ->descriptionIcon('heroicon-m-clock')
+                ->descriptionIcon('heroicon-m-clock', 'before')
                 ->color($daEnAttente > 0 ? 'warning' : 'gray'),
 
             Stat::make('Valeur Stocks Magasins', number_format($valeurStock, 2, ',', ' ') . ' MAD')
                 ->description('Matériaux disponibles')
-                ->descriptionIcon('heroicon-m-archive-box')
+                ->descriptionIcon('heroicon-m-archive-box', 'before')
                 ->color('info'),
 
             Stat::make('Engagements Achats (Mois)', number_format($commandesMois, 2, ',', ' ') . ' MAD')
                 ->description('Total TTC Bons de Commande')
-                ->descriptionIcon('heroicon-m-banknotes')
+                ->descriptionIcon('heroicon-m-banknotes', 'before')
                 ->color('primary'),
         ];
     }
