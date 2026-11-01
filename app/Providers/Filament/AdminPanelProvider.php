@@ -3,7 +3,9 @@
 namespace App\Providers\Filament;
 
 use App\Filament\Widgets\BtpOverview;
+use App\Filament\Widgets\DepensesMensuellesChart;
 use App\Filament\Widgets\LatestDemandesAchat;
+use App\Filament\Widgets\RepartitionDepensesChantierChart;
 use App\Filament\Widgets\StockAlerteWidget;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
@@ -50,8 +52,10 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->widgets([
                 BtpOverview::class,
-                LatestDemandesAchat::class,
+                DepensesMensuellesChart::class,
+                RepartitionDepensesChantierChart::class,
                 StockAlerteWidget::class,
+                LatestDemandesAchat::class,
             ])
             ->middleware([
                 EncryptCookies::class,
