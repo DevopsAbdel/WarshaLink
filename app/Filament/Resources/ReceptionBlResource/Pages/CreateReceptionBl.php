@@ -9,4 +9,9 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateReceptionBl extends CreateRecord
 {
     protected static string $resource = ReceptionBlResource::class;
+
+    protected function afterCreate(): void
+    {
+        app(\App\Services\StockService::class)->syncReceptionBl($this->record);
+    }
 }

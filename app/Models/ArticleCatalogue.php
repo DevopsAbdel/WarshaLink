@@ -25,4 +25,9 @@ class ArticleCatalogue extends Model
     {
         return $this->hasMany(LigneAchat::class, 'article_id');
     }
+
+    public function stocks(): HasMany
+    {
+        return $this->hasMany(Stock::class, 'article_id');
+    }
 }

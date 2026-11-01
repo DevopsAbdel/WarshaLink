@@ -9,7 +9,9 @@ use App\Models\DemandeAchat;
 use App\Models\Employe;
 use App\Models\Fournisseur;
 use App\Models\LigneAchat;
+use App\Models\MouvementStock;
 use App\Models\Pointage;
+use App\Models\Stock;
 use App\Models\User;
 use App\Models\Ville;
 use Illuminate\Database\Seeder;
@@ -419,5 +421,162 @@ class BtpSeeder extends Seeder
                 ]
             );
         }
+
+        // 10. Initialisation des Stocks & Mouvements de Démonstration
+        $stocksData = [
+            // Chantier Tanger
+            [
+                'chantier_id' => $chantiers['CHT-TNG-001']->id,
+                'article_id' => $articles['CIM-CPJ45']->id,
+                'quantite_actuelle' => 320.00,
+                'seuil_alerte_min' => 50.00,
+                'emplacement' => 'Hangar Ciment A',
+            ],
+            [
+                'chantier_id' => $chantiers['CHT-TNG-001']->id,
+                'article_id' => $articles['FER-T12']->id,
+                'quantite_actuelle' => 6.50,
+                'seuil_alerte_min' => 2.00,
+                'emplacement' => 'Parc Ferraillage Nord',
+            ],
+            [
+                'chantier_id' => $chantiers['CHT-TNG-001']->id,
+                'article_id' => $articles['SAB-CONC']->id,
+                'quantite_actuelle' => 45.00,
+                'seuil_alerte_min' => 15.00,
+                'emplacement' => 'Aire Agrégats 1',
+            ],
+            [
+                'chantier_id' => $chantiers['CHT-TNG-001']->id,
+                'article_id' => $articles['GRAV-1525']->id,
+                'quantite_actuelle' => 60.00,
+                'seuil_alerte_min' => 20.00,
+                'emplacement' => 'Aire Agrégats 2',
+            ],
+            [
+                'chantier_id' => $chantiers['CHT-TNG-001']->id,
+                'article_id' => $articles['BRIQ-8T']->id,
+                'quantite_actuelle' => 4.00, // En alerte (seuil = 10)
+                'seuil_alerte_min' => 10.00,
+                'emplacement' => 'Zone Maçonnerie Bâtiment A',
+            ],
+            [
+                'chantier_id' => $chantiers['CHT-TNG-001']->id,
+                'article_id' => $articles['HOURD-16']->id,
+                'quantite_actuelle' => 0.00, // Rupture totale !
+                'seuil_alerte_min' => 5.00,
+                'emplacement' => 'Magasin Planchers',
+            ],
+
+            // Chantier Casablanca
+            [
+                'chantier_id' => $chantiers['CHT-CAS-002']->id,
+                'article_id' => $articles['CIM-CPJ45']->id,
+                'quantite_actuelle' => 45.00, // En alerte (seuil = 100)
+                'seuil_alerte_min' => 100.00,
+                'emplacement' => 'Silo Temporaire',
+            ],
+            [
+                'chantier_id' => $chantiers['CHT-CAS-002']->id,
+                'article_id' => $articles['FER-T10']->id,
+                'quantite_actuelle' => 14.20,
+                'seuil_alerte_min' => 3.00,
+                'emplacement' => 'Zone Ferraillage Centre',
+            ],
+            [
+                'chantier_id' => $chantiers['CHT-CAS-002']->id,
+                'article_id' => $articles['FER-T8']->id,
+                'quantite_actuelle' => 22.00,
+                'seuil_alerte_min' => 5.00,
+                'emplacement' => 'Zone Ferraillage Sud',
+            ],
+
+            // Chantier Rabat
+            [
+                'chantier_id' => $chantiers['CHT-RAB-003']->id,
+                'article_id' => $articles['CIM-CPJ45']->id,
+                'quantite_actuelle' => 500.00,
+                'seuil_alerte_min' => 80.00,
+                'emplacement' => 'Magasin Central Rabat',
+            ],
+            [
+                'chantier_id' => $chantiers['CHT-RAB-003']->id,
+                'article_id' => $articles['GAINE-ICTA']->id,
+                'quantite_actuelle' => 18.00,
+                'seuil_alerte_min' => 10.00,
+                'emplacement' => 'Magasin Électricité',
+            ],
+            [
+                'chantier_id' => $chantiers['CHT-RAB-003']->id,
+                'article_id' => $articles['PVC-160']->id,
+                'quantite_actuelle' => 8.00, // En alerte (seuil = 20)
+                'seuil_alerte_min' => 20.00,
+                'emplacement' => 'Rack Plomberie',
+            ],
+        ];
+
+        foreach ($stocksData as $stockItem) {
+            Stock::firstOrCreate(
+                [
+                    'chantier_id' => $stockItem['chantier_id'],
+                    'article_id' => $stockItem['article_id'],
+                ],
+                [
+                    'quantite_actuelle' => $stockItem['quantite_actuelle'],
+                    'seuil_alerte_min' => $stockItem['seuil_alerte_min'],
+                    'emplacement' => $stockItem['emplacement'],
+                    'derniere_entree_at' => now()->subDays(2),
+                    'derniere_sortie_at' => now()->subHours(5),
+                ]
+            );
+        }
+
+        // Mouvements de stock exemplaires
+        MouvementStock::firstOrCreate(
+            ['numero_mouvement' => 'MVT-INIT-001'],
+            [
+                'type_mouvement' => 'entree_livraison',
+                'article_id' => $articles['CIM-CPJ45']->id,
+                'chantier_destination_id' => $chantiers['CHT-TNG-001']->id,
+                'quantite' => 350.00,
+                'quantite_avant' => 0.00,
+                'quantite_apres' => 350.00,
+                'auteur_id' => $chefTanger->id ?? 1,
+                'motif_usage' => 'Livraison initiale cimentier LafargeHolcim (BL-45892)',
+                'date_mouvement' => now()->subDays(2),
+            ]
+        );
+
+        MouvementStock::firstOrCreate(
+            ['numero_mouvement' => 'MVT-INIT-002'],
+            [
+                'type_mouvement' => 'sortie_consommation',
+                'article_id' => $articles['CIM-CPJ45']->id,
+                'chantier_source_id' => $chantiers['CHT-TNG-001']->id,
+                'quantite' => 30.00,
+                'quantite_avant' => 350.00,
+                'quantite_apres' => 320.00,
+                'auteur_id' => $chefTanger->id ?? 1,
+                'motif_usage' => 'Coulage des 12 poteaux R+1',
+                'lot_ouvrage' => 'Lot Gros Œuvre Bâtiment A',
+                'date_mouvement' => now()->subDay(),
+            ]
+        );
+
+        MouvementStock::firstOrCreate(
+            ['numero_mouvement' => 'MVT-INIT-003'],
+            [
+                'type_mouvement' => 'transfert_inter_chantier',
+                'article_id' => $articles['FER-T12']->id,
+                'chantier_source_id' => $chantiers['CHT-TNG-001']->id,
+                'chantier_destination_id' => $chantiers['CHT-CAS-002']->id,
+                'quantite' => 2.00,
+                'quantite_avant' => 8.50,
+                'quantite_apres' => 6.50,
+                'auteur_id' => $conducteur->id ?? 1,
+                'motif_usage' => 'Dépannage urgent armature ferraille Casa Marina',
+                'date_mouvement' => now()->subHours(8),
+            ]
+        );
     }
 }

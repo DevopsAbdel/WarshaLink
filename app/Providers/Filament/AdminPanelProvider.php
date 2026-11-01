@@ -4,6 +4,7 @@ namespace App\Providers\Filament;
 
 use App\Filament\Widgets\BtpOverview;
 use App\Filament\Widgets\LatestDemandesAchat;
+use App\Filament\Widgets\StockAlerteWidget;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -37,6 +38,7 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->navigationGroups([
                 '🛒 Achats & Appro',
+                '📦 Gestion des Stocks',
                 '👷 Pointage & RH',
                 '🏗️ Gestion Chantiers',
                 '⚙️ Configuration',
@@ -49,6 +51,7 @@ class AdminPanelProvider extends PanelProvider
             ->widgets([
                 BtpOverview::class,
                 LatestDemandesAchat::class,
+                StockAlerteWidget::class,
             ])
             ->middleware([
                 EncryptCookies::class,

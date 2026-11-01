@@ -60,6 +60,11 @@ class Chantier extends Model
         return $this->hasMany(Pointage::class);
     }
 
+    public function stocks(): HasMany
+    {
+        return $this->hasMany(Stock::class);
+    }
+
     public function receptionsBl(): HasMany
     {
         return $this->hasMany(ReceptionBl::class);
