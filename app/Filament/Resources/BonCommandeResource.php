@@ -111,6 +111,7 @@ class BonCommandeResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+            ->modifyQueryUsing(fn ($query) => $query->with(['fournisseur', 'demandeAchat.chantier']))
             ->columns([
                 Tables\Columns\TextColumn::make('numero_bc')
                     ->label('N° BC')

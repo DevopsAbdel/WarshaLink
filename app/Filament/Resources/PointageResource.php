@@ -110,6 +110,7 @@ class PointageResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+            ->modifyQueryUsing(fn ($query) => $query->with(['chantier', 'employe']))
             ->columns([
                 Tables\Columns\TextColumn::make('date_pointage')
                     ->label('Date')

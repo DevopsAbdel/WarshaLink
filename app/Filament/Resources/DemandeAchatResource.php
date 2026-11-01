@@ -168,6 +168,7 @@ class DemandeAchatResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+            ->modifyQueryUsing(fn ($query) => $query->with(['chantier.ville', 'demandeur']))
             ->columns([
                 Tables\Columns\TextColumn::make('numero_da')
                     ->label('N° DA')

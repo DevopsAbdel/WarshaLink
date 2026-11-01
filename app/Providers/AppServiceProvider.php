@@ -19,6 +19,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        if (config('database.default') === 'sqlite') {
+            try {
+                \Illuminate\Support\Facades\DB::statement('PRAGMA journal_mode = WAL;');
+                \Illuminate\Support\Facades\DB::statement('PRAGMA synchronous = NORMAL;');
+            } catch (\Throwable $e) {
+                // Ignore during early bootstrap or migrations
+            }
+        }
     }
 }
